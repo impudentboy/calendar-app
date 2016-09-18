@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CALENDAR APP</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/main.css" type="text/css" charset="utf-8">
+		<script src="js/jquery-3.1.0.js" charset="utf-8"></script>
+		<script src="js/calendar.js" charset="utf-8"></script>
+		<script src="js/main.js" charset="utf-8"></script>
+	</head>
+	<body>
+		
+	<!-- Header Block -->
+	
+	<div class="b-header block">
+			
+		<div class="block__wrapper">
+			
+			<select class="b-header__branch input input__select" id="branch">
+				<option selected disabled>Выберите филиал</option>
+				<option value="moscow">Московский</option>
+				<option value="saint-p">Санкт-Петербургский</option>
+			</select>
+			
+			<select class="b-header__role input input__select" id="user-role">
+				<option disabled>Выберите роль</option>
+				<option value="worker" selected>Сотрудник</option>
+				<option value="manager">Помощник руководителя</option>
+				<option value="organizer">Организатор</option>
+			</select>
+			
+			<a class="b-header__add-event button" href="#" id="add-event">Создать мероприятие</a>
+			
+			<div class="b-header__account">
+				
+			</div>
+			
+		</div>
+			
+	</div>
+		
+	<!-- END Header Block -->
+	
+	<!-- Calendar Block -->
+	
+	<div class="b-calandar block">
+		
+		<div class="block__wrapper">
+			
+			<h1 class="b-calandar__title">
+				
+				<span class="title__month" id="calendar-month"></span>
+				
+				<span class="title__year"  id="calendar-year"></span>
+				
+			</h1>
+			
+			<a class="b-calandar__prev-month" href="#" id="prev-month"></a>
+			
+			<a class="b-calandar__next-month" href="#" id="next-month"></a>
+			
+			<div class="b-calandar__calandar-app" id="calendar">
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<!-- END Calendar Block -->
+	
+	<!-- Overlay Block -->
+	
+	<div class="b-overlay">
+		
+		
+		<!-- Worker PopUp -->
+		<div class="b-popup-worker b-popup">
+			
+			<div class="b-popup-worker__sidebar"></div>
+			
+			<a class="b-popup-worker__close" href="javascript:ClosePopUp();"></a>
+			
+			<div class="b-popup-worker__event-desc">
+				
+				<h2 class="event-desc__title"></h2>
+			
+				<p class="event-desc__description"></p>
+				
+			</div>
+
+			<div class="b-popup-worker__event-info event-info">
+				
+				<span class="event-info__day event-info__value"></span>
+				<span class="event-info__month event-info__label"></span>
+				
+				<span class="event-info__time-value event-info__value"></span>
+				<span class="event-info__time-label event-info__label">время</span>
+				
+				<span class="event-info__count event-info__value"></span>
+				<span class="event-info__seats event-info__label">мест</span>
+				
+			</div>
+			
+			<a class="b-popup-worker__confirm button button__confirm" href="javascript:EventRegister();">Зарегистрироваться</a>
+			
+			<a class="b-popup-worker__cancel button button__cancel" href="javascript:EventUnregister();">Отменить</a>
+			
+		</div>
+		
+		
+		<!-- Manager PopUp -->
+		<div class="b-popup-manager b-popup">
+			
+			<div class="b-popup-manager__sidebar">
+				
+				<input class="sidebar__name input" 	id="manager-name" 	placeholder="ФИО руководителя"/>
+				
+				<input class="sidebar__job input" 	id="manager-job"	placeholder="Должность руководителя"/>
+				
+				<input class="sidebar__email input" id="manager-email" 	placeholder="Email руководителя"/>
+				
+			</div>
+			
+			<a class="b-popup-manager__close" href="javascript:ClosePopUp();"></a>
+			
+			<div class="b-popup-manager__event-desc">
+				
+				<h2 class="event-desc__title"></h2>
+			
+				<p class="event-desc__description"></p>
+				
+			</div>
+
+			<div class="b-popup-manager__event-info event-info">
+				
+				<span class="event-info__day event-info__value"></span>
+				<span class="event-info__month event-info__label"></span>
+				
+				<span class="event-info__time-value event-info__value"></span>
+				<span class="event-info__time-label event-info__label">время</span>
+				
+				<span class="event-info__count event-info__value"></span>
+				<span class="event-info__seats event-info__label">мест</span>
+				
+			</div>
+			
+			<a class="b-popup-manager__confirm button button__confirm" href="javascript:EventRegister();">Зарегистрироваться</a>
+			
+			<a class="b-popup-manager__cancel button button__cancel" href="javascript:EventUnregister();">Отменить</a>
+			
+		</div>
+		
+		<!-- Organizer PopUp -->
+		<div class="b-popup-organizer b-popup">
+			
+			<div class="b-popup-organizer__sidebar"></div>
+			
+			<a class="b-popup-organizer__close" href="javascript:ClosePopUp();"></a>
+			
+			<div class="b-popup-organizer__event-desc">
+				
+				<h2 class="event-desc__title"></h2>
+			
+				<p class="event-desc__description"></p>
+				
+			</div>
+
+			<div class="b-popup-organizer__event-info event-info">
+				
+				<span class="event-info__day event-info__value"></span>
+				<span class="event-info__month event-info__label"></span>
+				
+				<span class="event-info__time-value event-info__value"></span>
+				<span class="event-info__time-label event-info__label">время</span>
+				
+				<span class="event-info__count event-info__value"></span>
+				<span class="event-info__seats event-info__label">мест</span>
+				
+			</div>
+			
+			<a class="b-popup-organizer__cancel button button__cancel" href="javascript:DeleteEvent();">Удалить</a>
+			
+		</div>
+		
+		<!-- Add Event PopUp -->
+		
+		<div class="b-popup-add-event b-popup">
+			
+			<div class="b-popup-add-event__sidebar">
+				
+				<select class="sidebar__branch input input__select" id="add-event-branch">
+					<option selected disabled>Выберите филиал</option>
+					<option value="moscow">Московский</option>
+					<option value="saint-p">Санкт-Петербургский</option>
+				</select>
+				
+				<a class="sidebar__add-event button button__confirm" href="javascript:AddEvent();">Добавить мероприятие</a>
+				
+			</div>
+			
+			<a class="b-popup-add-event__close" href="javascript:ClosePopUp();"></a>
+			
+			<div class="b-popup-add-event__event-desc">
+				
+				<input class="event-desc__event-title input" placeholder="Введите название мероприятия" id="add-event-title" />
+			
+				<textarea class="event-desc__event-description" placeholder="Введите описание мероприятия" id="add-event-desc"></textarea>
+				
+			</div>
+
+			<div class="b-popup-add-event__event-info">
+				
+				<input class="event-info__day-value event-info__value" id="add-event-day" maxlength="2" />
+				<span class="event-info__day-label event-info__label">день</span>
+				
+				<span class="event-info__month-value-fake event-info__value" id="add-event-month-fake">1</span>
+				<select class="event-info__month-value input input__select" id="add-event-month">
+					<option selected disabled>Выберите месяц</option>
+					<option value="1">Январь</option>
+					<option value="2">Февраль</option>
+					<option value="3">Март</option>
+					<option value="4">Апрель</option>
+					<option value="5">Май</option>
+					<option value="6">Июнь</option>
+					<option value="7">Июль</option>
+					<option value="8">Август</option>
+					<option value="9">Сентябрь</option>
+					<option value="10">Октябрь</option>
+					<option value="11">Ноябрь</option>
+					<option value="12">Декабрь</option>
+				</select>
+				<span class="event-info__month-label event-info__label">месяц</span>
+				
+				
+				<input class="event-info__year-value event-info__value" id="add-event-year" maxlength="4" />
+				<span class="event-info__year-label event-info__label">год</span>
+				
+				
+				<input class="event-info__datetime-value event-info__value"  id="add-event-datetime"maxlength="5" />
+				<span class="event-info__datetime-label event-info__label">время</span>
+				
+				<input class="event-info__seats-value event-info__value"  id="add-event-seats" />
+				<span class="event-info__seats-label event-info__label">мест</span>
+				
+			</div>
+			
+			
+			
+		</div>
+		
+	</div>
+	
+	<!-- END Overlay Block -->
+		
+	</body>
+</html>

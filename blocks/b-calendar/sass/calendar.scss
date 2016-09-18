@@ -1,0 +1,778 @@
+//# Calendar Screen
+.b-calandar{
+	
+	height: 930px;
+	
+	&__title{
+		
+		position: absolute;
+		
+		width: 	990px;
+		height: 530px;
+		
+		top:	115px;
+		left: 	50%;
+		margin-left: -495px;
+		
+		@include typo-calendar-title;
+		
+	}
+	
+	&__prev-month{
+		
+		position: absolute;
+		
+		width: 	90px;
+		height: 530px;
+		
+		left: 	0;
+		top: 	200px;
+		
+		background: url('../assets/images/arrow-left.svg') no-repeat center center;
+		
+	}
+	
+	&__next-month{
+		
+		position: absolute;
+		
+		width: 	90px;
+		height: 530px;
+		
+		right: 	0;
+		top: 	200px;
+		
+		background: url('../assets/images/arrow-right.svg') no-repeat center center;
+		
+	}
+	
+	&__calandar-app{
+		
+		position: absolute;
+		
+		width: 	990px;
+		height: 530px;
+		
+		top:	200px;
+		left: 	50%;
+		margin-left: -495px;
+		
+		
+	}
+	
+}
+
+//# Calendar Table
+.calandar-app{
+	
+	width: 990px;
+	height: 530px;
+
+	background-color: $color-grey;
+	
+	td{	
+		position: relative;
+		
+		width: 	108px;
+		height: 73px;
+		
+		padding: 15px;
+		
+		border: 1px solid white;
+		
+		.date-number{
+			
+			position: absolute;
+	
+			top: 		15px;
+			left: 		15px;
+			
+			@include typo-date-number;
+			
+		}
+		
+		&.date__invite{
+			
+			background: $color-orange;
+			
+			span{
+
+				color: white;
+				
+			}
+			
+			.event-in-cell{
+				
+				display: block;
+				width: 		102px;
+				//height: 	12px;
+				
+				padding: 5px;
+				margin-top: 10px;
+				
+				float: left;
+
+				
+				border-radius: 3px;
+				background: white;
+				
+				@include typo-calendar-event;
+				
+				//overflow: hidden;
+				
+			}
+			
+		}
+		
+		&.date__confirm{
+			
+		}
+
+	}
+	
+}
+
+//# PopUp Worker
+.b-popup-worker{
+	
+	display: none;
+	
+	&__sidebar{
+		
+		position: 		absolute;
+		
+		width: 			280px;
+		height: 		440px;
+		
+		top:			0px;
+		left: 			0px;
+		
+		border-radius: 	5px 0 0 5px;
+		
+		background: 	url('../assets/images/event-img.jpg') top center;
+		background-size: cover;
+		-webkit-background-size: cover;
+		
+	}
+	
+	&__close{
+		
+		position: 	absolute;
+		
+		width: 		20px;
+		height: 	20px;
+		
+		top:		30px;
+		right: 		30px;
+		
+		background: url('../assets/images/close.svg') top right no-repeat;
+		
+		&:hover{
+			opacity: 0.5;	
+		}
+		
+	}
+	
+	&__event-desc{
+			
+		position: 		absolute;
+			
+		top:			60px;
+		left:			50%;
+		margin-left: 	(280px - 360px)/2;
+		
+	}
+
+	
+	&__event-info{
+		
+		position: 		absolute;
+			
+		top:			220px;
+		left:			50%;
+		margin-left: 	(280px - 360px)/2;
+		
+	}
+	
+	&__confirm{
+		
+		position: 		absolute;
+		
+		top: 			326px;
+		left: 			50%;
+		margin-left: 	(280px - $base-button-width)/2;
+		
+	}
+	
+	&__cancel{
+		
+		position: 		absolute;
+		
+		top: 			326px;
+		left: 			50%;
+		margin-left: 	(280px - $base-button-width)/2;
+		
+	}
+	
+	
+}
+
+//# PopUp Manager
+.b-popup-manager{
+	
+	display: none;
+	
+	&__sidebar{
+		
+		position: 		absolute;
+		
+		width: 			280px;
+		height: 		440px;
+		
+		top:			0px;
+		left: 			0px;
+		
+		border-radius: 	5px 0 0 5px;
+		
+		background: 	url('../assets/images/event-img.jpg') top center;
+		background-size: cover;
+		-webkit-background-size: cover;
+		
+	}
+	
+	&__close{
+		
+		position: 	absolute;
+		
+		width: 		20px;
+		height: 	20px;
+		
+		top:		30px;
+		right: 		30px;
+		
+		background: url('../assets/images/close.svg') top right no-repeat;
+		
+		&:hover{
+			opacity: 0.5;	
+		}
+		
+	}
+	
+	&__event-desc{
+			
+		position: 		absolute;
+			
+		top:			60px;
+		left:			50%;
+		margin-left: 	(280px - 360px)/2;
+		
+	}
+
+	
+	&__event-info{
+		
+		position: 		absolute;
+			
+		top:			220px;
+		left:			50%;
+		margin-left: 	(280px - 360px)/2;
+		
+	}
+	
+	&__confirm{
+		
+		position: 		absolute;
+		
+		top: 			326px;
+		left: 			50%;
+		margin-left: 	(280px - $base-button-width)/2;
+		
+	}
+	
+	&__cancel{
+		
+		position: 		absolute;
+		
+		top: 			326px;
+		left: 			50%;
+		margin-left: 	(280px - $base-button-width)/2;
+		
+	}
+	
+	
+}
+
+//# PopUp Organizer
+.b-popup-organizer{
+	
+	display: none;
+	
+	&__sidebar{
+		
+		position: 		absolute;
+		
+		width: 			280px;
+		height: 		440px;
+		
+		top:			0px;
+		left: 			0px;
+		
+		border-radius: 	5px 0 0 5px;
+		
+		background: 	url('../assets/images/event-img.jpg') top center;
+		background-size: cover;
+		-webkit-background-size: cover;
+		
+	}
+	
+	&__close{
+		
+		position: 	absolute;
+		
+		width: 		20px;
+		height: 	20px;
+		
+		top:		30px;
+		right: 		30px;
+		
+		background: url('../assets/images/close.svg') top right no-repeat;
+		
+		&:hover{
+			opacity: 0.5;	
+		}
+		
+	}
+	
+	&__event-desc{
+			
+		position: 		absolute;
+			
+		top:			60px;
+		left:			50%;
+		margin-left: 	(280px - 360px)/2;
+		
+	}
+
+	
+	&__event-info{
+		
+		position: 		absolute;
+			
+		top:			220px;
+		left:			50%;
+		margin-left: 	(280px - 360px)/2;
+		
+	}
+	
+	&__confirm{
+		
+		position: 		absolute;
+		
+		top: 			326px;
+		left: 			50%;
+		margin-left: 	(280px - $base-button-width)/2;
+		
+	}
+	
+	&__cancel{
+		
+		position: 		absolute;
+		
+		top: 			326px;
+		left: 			50%;
+		margin-left: 	(280px - $base-button-width)/2;
+		
+	}
+	
+	
+}
+
+//* PopUp Add Event
+.b-popup-add-event{
+	
+	display: none;
+	
+	&__sidebar{
+		
+		position: 		absolute;
+		
+		width: 			280px;
+		height: 		440px;
+		
+		top:			0px;
+		left: 			0px;
+		
+		border-radius: 	5px 0 0 5px;
+		
+		background: 	url('../assets/images/event-img.jpg') top center;
+		background-size: cover;
+		-webkit-background-size: cover;
+		
+	}
+	
+	&__close{
+		
+		position: 	absolute;
+		
+		width: 		20px;
+		height: 	20px;
+		
+		top:		30px;
+		right: 		30px;
+		
+		background: url('../assets/images/close.svg') top right no-repeat;
+		
+		&:hover{
+			opacity: 0.5;	
+		}
+		
+	}
+	
+	&__event-desc{
+		
+		position: 		absolute;
+			
+		top:			60px;
+		left:			50%;
+		margin-left: 	(280px - 360px)/2;
+		
+	}
+	
+	&__event-info{
+		
+		position: 		absolute;
+		
+		width: 			360px;
+			
+		top:			250px;
+		left:			50%;
+		margin-left: 	(280px - 360px)/2;
+		
+	}
+	
+}
+
+//* Sidebar Block
+.sidebar{
+	
+	&__name{
+		
+		position: 		absolute;
+		
+		bottom:			154px;
+		left: 			50%;
+		margin-left: 	-120px;
+		
+	}
+	
+	&__job{
+		
+		position: 		absolute;
+		
+		bottom:			104px;
+		left: 			50%;
+		margin-left: 	-120px;
+		
+	}
+	
+	&__email{
+		
+		position: 		absolute;
+		
+		bottom: 		54px;
+		left: 			50%;
+		margin-left: 	-120px;
+		
+	}
+	
+	&__branch{
+		
+		position: 		absolute;
+		
+		width: 			235px;
+		
+		bottom: 		130px;
+		left: 			50%;
+		margin-left: 	-117px;
+		
+	}
+	
+	&__add-event{
+		
+		position: absolute;
+		
+		bottom: 		54px;
+		left: 			50%;
+		margin-left: 	-($base-button-width/2);
+		
+	}
+	
+	
+}
+
+//* Event description
+.event-desc{
+
+	width: 			360px; 
+
+	&__title{
+		
+		display: 	block;
+		width: 		360px;
+		
+		margin-bottom: 10px;
+		
+		@include typo-event-title;
+	
+	}
+	
+	&__description{
+		
+		display: 	block;
+		width: 		360px;
+		
+		@include typo-event-desc;
+		
+	}
+	
+	&__event-title{
+		
+		position: 	absolute;
+		
+		width: 		360px !important;
+		
+		top:		0px;
+		left: 		0px;
+		
+		color: 		$color-dark-grey;
+		
+	}
+	
+	&__event-description{
+		
+		position: 		absolute;
+		
+		width: 			360px;
+		height: 		100px;
+		
+		padding-left: 	14px;
+		padding-right: 	14px;
+		
+		top:			50px;
+		left: 			0px;
+		
+		@include typo-event-desc;
+		
+		border: 		none;
+		outline: 		none;
+		
+		color: 			$color-dark-grey;
+		
+	}
+	
+}
+
+//* Event Date, Time, Seats
+.event-info{
+	
+	width: 			360px; 
+	
+	&__value{
+		
+		position: 	absolute;
+		top: 		0;
+		
+		@include typo-event-value;
+		
+	}
+	
+	&__label{
+		
+		position: 	absolute;
+		top: 		44px;
+		
+		@include typo-event-label;
+		
+	}
+	
+	&__day{
+		
+		width: 		70px;
+		left: 		0px;
+		
+	}
+	
+	&__month{
+		
+		width: 		70px;
+		left: 		0px;
+		
+	}
+	
+	&__time-value{
+		width: 			130px;
+		left: 			50%;
+		margin-left: 	-75px;
+	}
+	
+	&__time-label{
+		width: 			130px;
+		left: 			50%;
+		margin-left: 	-75px;
+	}
+	
+	&__count{
+		width: 		70px;
+		right: 		0px;
+	}
+	
+	&__seats{
+		width: 		70px;
+		right: 		0px;
+	}
+	
+	
+	&__day-value{
+		
+		position: 		absolute;
+		
+		width: 			70px;
+		
+		top:			0px;
+		left: 			0px;
+		
+		color:			$color-dark-grey;
+		font-size: 		30px;
+		
+		border: 		none;
+		outline: 		none;
+		
+	}
+	
+	&__day-label{
+		
+		width: 			70px;
+		
+		left: 			0px;
+		
+	}
+	
+	&__month-value{
+		
+		width: 			130px;
+		
+		left: 			50%;
+		margin-left: 	-65px;
+		
+		color:			$color-dark-grey;
+		
+		
+		opacity: 		0;
+		
+		&-fake{
+			
+			width: 			140px;
+			
+			top:			7px !important;
+			left: 			50%;
+			margin-left: 	-70px;
+			
+			color:			$color-dark-grey;
+
+			text-align: 	center;
+			font-size: 		30px;
+
+			
+		}
+		
+	}
+	
+	&__month-label{
+		
+		width: 			140px;
+		
+		left: 			50%;
+		margin-left: 	-70px;
+		
+	}
+	
+	&__year-value{
+		
+		position: 		absolute;
+		
+		width: 			90px;
+		
+		top:			0px;
+		right: 			0px;
+		
+		color:			$color-dark-grey;
+		font-size: 		30px;
+		
+		border: 		none;
+		outline: 		none;
+		
+	}
+	
+	&__year-label{
+		
+		width:			90px;
+		
+		right: 			0px;
+		
+	}
+	
+	&__datetime-value{
+		
+		position: 		absolute;
+		
+		width: 			180px;
+		
+		top:			70px;
+		left: 			0px;
+		
+		color:			$color-dark-grey;
+		font-size: 		30px !important;
+		
+		border: 		none;
+		outline: 		none;
+		
+	}
+	
+	&__datetime-label{
+		
+		width: 			180px;
+		
+		top:			115px;
+		left: 			0;
+		
+	}
+	
+	&__seats-value{
+		
+		position: 		absolute;
+		
+		width: 			180px;
+		
+		top:			70px;
+		right: 			0px;
+		
+		color:			$color-dark-grey;
+		font-size: 		30px !important;
+		
+		border: 		none;
+		outline: 		none;
+		
+	}
+	
+	&__seats-label{
+		
+		width: 			180px;
+		
+		top:			115px;
+		right: 			0;
+		
+	}
+	
+		
+}
+

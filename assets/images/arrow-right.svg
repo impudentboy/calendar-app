@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35.09" height="64" viewBox="0 0 35.09 64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #00a8ff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 7px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M5724.47,618.479L5752.53,590l-28.06-28.479" transform="translate(-5720.97 -558)"/>
+</svg>
